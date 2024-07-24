@@ -20,11 +20,6 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - run: ls
-    
-    - name: CI for Receipt React App
-      run: cd receipt-component
-      
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -34,9 +29,11 @@ jobs:
         
     - name: Install dependencies for Receipt React App
       run: npm install
+      working-directory: ./receipt-component
       
     - name: Building Receipt React App
       run: npm run build:local
+      working-directory: ./receipt-component
 
     #- name: Building Receipt React App
     #  run: npm run start
