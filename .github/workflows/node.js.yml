@@ -24,7 +24,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js ${{ matrix.node-version }} in Receipt React App
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
@@ -44,6 +44,19 @@ jobs:
       run: npm run build:local
       working-directory: ./receipt-component
 
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }} in SlaveMDB Node App
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: slaveMDB-payment-app-backend/package-lock.json
+
+    - name: Install dependencies for SlaveMDB Node App
+      run: npm install
+      working-directory: ./slaveMDB-payment-app-backend
+      
     - name: Starting Receipt React App
       run: npm run start
-      working-directory: ./receipt-component
+      working-directory: ./slaveMDB-payment-app-backend
+      
