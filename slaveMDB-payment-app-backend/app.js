@@ -27,6 +27,6 @@ app.use("/vape/api/sendReceipt", sendReceipt);
 app.use("/vape/api/getData", getData);
 
 const PORT = process.env.PORT || 5003;
-app.listen(PORT, () => {
+app.listen(PORT2, () => {
   console.log(`Server listening on port ${PORT}`);
 });
