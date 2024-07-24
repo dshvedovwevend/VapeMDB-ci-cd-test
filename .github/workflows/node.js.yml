@@ -26,7 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
+        cache-dependency-path: receipt-component/package-lock.json
+      
     - name: Install dependencies for Receipt React App
       run: npm install
       working-directory: ./receipt-component
