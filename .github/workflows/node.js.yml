@@ -43,7 +43,3 @@ jobs:
 
     - name: Building Receipt React App
       run: npm run start
-      env:
-        NODE_ENV = "local"
-        REACT_APP_SLAVE_MDB_BACKEND_URL="http://localhost:5003/vape/api"
-        REACT_APP_GENERIC_VENDING_BACKEND_URL="http://localhost:5002/vending/api"
