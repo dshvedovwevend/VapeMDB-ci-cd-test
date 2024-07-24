@@ -31,11 +31,6 @@ jobs:
         cache: 'npm'
         cache-dependency-path: receipt-component/package-lock.json
 
-    - name: env check 
-      run: echo $REACT_APP_SLAVE_MDB_BACKEND_URL
-      env:
-        REACT_APP_SLAVE_MDB_BACKEND_URL: ${{ secrets.REACT_APP_SLAVE_MDB_BACKEND_URL }}
-    
     - name: Install dependencies for Receipt React App
       run: npm install
       working-directory: ./receipt-component
@@ -57,7 +52,7 @@ jobs:
       working-directory: ./slaveMDB-payment-app-backend
       
     - name: Starting SlaveMDB Node App
-      run: echo 
+      run: npm run start 
       working-directory: ./slaveMDB-payment-app-backend
       env:
         NODE_ENV: local
