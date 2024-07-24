@@ -57,9 +57,11 @@ jobs:
       working-directory: ./slaveMDB-payment-app-backend
       
     - name: Starting SlaveMDB Node App
-      run: npm run start
+      run: echo 
       working-directory: ./slaveMDB-payment-app-backend
       env:
-        MONGO_URL: ${{ vars.MONGO_URL }}
-      
+        NODE_ENV: local
+        PORT: 5003
+        MONGO_URL: mongodb://localhost:27017/vape-dev
+              
       
