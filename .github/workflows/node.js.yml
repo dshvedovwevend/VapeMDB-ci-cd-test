@@ -30,7 +30,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: receipt-component/package-lock.json
-      
+
+    - run: echo "organization variable ${{ secrets.REACT_APP_SLAVE_MDB_BACKEND_URL }}"
+    
     - name: Install dependencies for Receipt React App
       run: npm install
       working-directory: ./receipt-component
@@ -39,5 +41,9 @@ jobs:
       run: npm run build:local
       working-directory: ./receipt-component
 
-    #- name: Building Receipt React App
-    #  run: npm run start
+    - name: Building Receipt React App
+      run: npm run start
+      env:
+        NODE_ENV = "local"
+        REACT_APP_SLAVE_MDB_BACKEND_URL="http://localhost:5003/vape/api"
+        REACT_APP_GENERIC_VENDING_BACKEND_URL="http://localhost:5002/vending/api"
