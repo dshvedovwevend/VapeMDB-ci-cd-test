@@ -31,7 +31,10 @@ jobs:
         cache: 'npm'
         cache-dependency-path: receipt-component/package-lock.json
 
-    - run: echo "organization variable ${{ secrets.REACT_APP_SLAVE_MDB_BACKEND_URL }}"
+    - name: env check 
+      run: echo "organization variable $REACT_APP_SLAVE_MDB_BACKEND_URL"
+      env:
+        REACT_APP_SLAVE_MDB_BACKEND_URL: ${{ secrets.REACT_APP_SLAVE_MDB_BACKEND_URL }}
     
     - name: Install dependencies for Receipt React App
       run: npm install
@@ -41,5 +44,6 @@ jobs:
       run: npm run build:local
       working-directory: ./receipt-component
 
-    - name: Building Receipt React App
+    - name: Starting Receipt React App
       run: npm run start
+      working-directory: ./receipt-component
