@@ -60,6 +60,6 @@ jobs:
       run: npm run start
       working-directory: ./slaveMDB-payment-app-backend
       env:
-        MONGO_URL: ${{ secrets.MONGO_URL }}
+        MONGO_URL: ${{ vars.MONGO_URL }}
       
       
