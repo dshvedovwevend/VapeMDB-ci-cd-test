@@ -1,0 +1,207 @@
+body {
+  background-color: #ffffff;
+}
+
+.App {
+  max-width: 400px;
+  border: 1px solid rgb(67, 67, 73);
+  margin: auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+.Logo {
+  margin: auto;
+  width: 11.9rem;
+}
+
+.Footer {
+  margin: auto;
+  width: 62%;
+  margin-bottom: 2rem;
+}
+
+.Footer img {
+  width: 100%;
+}
+
+.Thankyou {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.Thankyou img {
+  width: 65%;
+  box-shadow: 8px 8px 8px #888888;
+}
+
+.thankYouTextContainer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.merchantName {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.thankYouText {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contactInfoInputsContainer {
+  width: 84%;
+  margin: 1rem auto;
+}
+
+.forReceiptText {
+  font-size: 20px;
+  color: #4caf50;
+  margin-bottom: 0.5rem;
+}
+
+.receiptInput {
+  margin: 0.5rem auto;
+  width: 94%;
+}
+
+.transactionStatus {
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.contactInfoInputsContainer input {
+  padding: 0.5rem 0.6rem;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 1px solid #919191;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: #ededed;
+}
+
+.disclaimerTextHolder {
+  width: 96%;
+  margin: auto;
+  line-height: 1;
+  color: #827e7e;
+  margin-bottom: 2rem;
+}
+.disclaimerText {
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.transactionDetailsHolder {
+  display: flex;
+  flex-direction: column;
+  width: 79.5%;
+  margin: auto;
+  font-size: 15px;
+}
+
+.transactionDetailsKey {
+  font-weight: 700;
+}
+.transactionDetailsValue {
+  font-weight: 500;
+}
+
+.thankYouPageLoaderHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.receiptButton {
+  width: 60%;
+  margin: 4rem auto;
+  border: 1px solid rgb(145, 144, 144);
+  padding: 0.5rem 0rem;
+  text-align: center;
+  border-radius: 61px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  background: #0469b9;
+  box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.3);
+  /* margin-bottom: 4rem; */
+}
+
+#save-pdf-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 2px 2px 8px grey;
+}
+
+#save-pdf-button:hover {
+  background-color: #054905; /* Darker green color on hover */
+}
+
+#selectItemPage-info-text {
+  display: inline-block;
+  margin: 1.5rem;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#receipt-content {
+  margin-bottom: 10px;
+}
+
+#receipt-address {
+  margin: 10px auto;
+}
+.receiptHolder {
+  font-family: "Courier New", Courier, monospace;
+  width: 89%;
+  height: auto;
+  margin: 1rem auto;
+}
+
+.totalContent,
+.receiptDataHolder,
+.taxContent {
+  font-size: 18px;
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalContent {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.transactionInfoHolder {
+  margin: 1.5rem auto;
+}
+
+.trnasctionInfo {
+  padding: 10px 10px;
+  font-size: 16px;
+}
+
+.notFound {
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .App {
+    border: none;
+  }
+}
