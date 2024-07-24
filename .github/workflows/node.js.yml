@@ -56,7 +56,10 @@ jobs:
       run: npm install
       working-directory: ./slaveMDB-payment-app-backend
       
-    - name: Starting Receipt React App
+    - name: Starting SlaveMDB Node App
       run: npm run start
       working-directory: ./slaveMDB-payment-app-backend
+      env:
+        MONGO_URL: ${{ secrets.MONGO_URL }}
+      
       
