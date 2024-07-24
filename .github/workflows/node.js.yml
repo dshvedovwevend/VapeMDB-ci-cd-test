@@ -20,6 +20,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
+        mongodb-version: ['6.0', '7.0', '8.0']
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -50,7 +51,13 @@ jobs:
     - name: Install dependencies for SlaveMDB Node App
       run: npm install
       working-directory: ./slaveMDB-payment-app-backend
-      
+    
+    - name: Start MongoDB
+      uses: supercharge/mongodb-github-action@1.11.0
+      with:
+        mongodb-version: ${{ matrix.mongodb-version }}
+        mongodb-replica-set: vape-dev
+
     - name: Starting SlaveMDB Node App
       run: npm run start 
       working-directory: ./slaveMDB-payment-app-backend
