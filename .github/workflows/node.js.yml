@@ -40,30 +40,30 @@ jobs:
       run: npm run build:local
       working-directory: ./receipt-component
 
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }} in SlaveMDB Node App
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: slaveMDB-payment-app-backend/package-lock.json
+    # - uses: actions/checkout@v4
+    # - name: Use Node.js ${{ matrix.node-version }} in SlaveMDB Node App
+    #  uses: actions/setup-node@v3
+    #  with:
+    #    node-version: ${{ matrix.node-version }}
+    #    cache: 'npm'
+    #    cache-dependency-path: slaveMDB-payment-app-backend/package-lock.json
 
-    - name: Install dependencies for SlaveMDB Node App
-      run: npm install
-      working-directory: ./slaveMDB-payment-app-backend
+    # - name: Install dependencies for SlaveMDB Node App
+    #  run: npm install
+    #  working-directory: ./slaveMDB-payment-app-backend
     
-    - name: Start MongoDB
-      uses: supercharge/mongodb-github-action@1.11.0
-      with:
-        mongodb-version: ${{ matrix.mongodb-version }}
-        mongodb-replica-set: vape-dev
+    # - name: Start MongoDB
+    # uses: supercharge/mongodb-github-action@1.11.0
+    #  with:
+    #    mongodb-version: ${{ matrix.mongodb-version }}
+    #    mongodb-replica-set: vape-dev
 
-    - name: Starting SlaveMDB Node App
-      run: npm run start 
-      working-directory: ./slaveMDB-payment-app-backend
-      env:
-        NODE_ENV: local
-        PORT: 5003
-        MONGO_URL: mongodb://localhost:27017/vape-dev
+    # - name: Starting SlaveMDB Node App
+    #  run: npm run start 
+    #  working-directory: ./slaveMDB-payment-app-backend
+    #  env:
+    #    NODE_ENV: local
+    #    PORT: 5003
+    #    MONGO_URL: mongodb://localhost:27017/vape-dev
               
       
